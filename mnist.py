@@ -77,4 +77,4 @@ if __name__ == "__main__":
 	interp = ClassificationInterpretation.from_learner(learn)
 	interp.plot_confusion_matrix(figsize=(5,5))
 	matplotlib.pyplot.savefig('confusion_matrix.png')
-	matplotlib.pyplot.clf()g
+	matplotlib.pyplot.clf()
