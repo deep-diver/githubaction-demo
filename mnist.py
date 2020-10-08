@@ -30,7 +30,7 @@ def set_wandb(key, sha):
 		stripped_line = line.strip()
 		new_line = stripped_line.replace("t_wandb_link", ro.get_url())
 		new_file_content += new_line +"\n"
-	taret_file.close()
+	target_file.close()
 	
 	target_file = open("generated_template/wandb.md", "w")
 	target_file.write(new_file_content)
