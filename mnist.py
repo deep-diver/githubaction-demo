@@ -58,7 +58,7 @@ if __name__ == "__main__":
 		item_tfms=Resize(224))
 
 	dls = DataLoaders.from_dblock(db, df=train, source=PATH, bs=32)
-	dls.show_batch(max_n=5, ncols=5, nrows=1, figsize=(6,2))
+	dls.show_batch(max_n=10, ncols=5, nrows=5, figsize=(4,4))
 
 	matplotlib.pyplot.savefig('show_batch.png')
 	matplotlib.pyplot.clf()
@@ -69,12 +69,12 @@ if __name__ == "__main__":
 	else:
 		learn.fine_tune(5)
 
-	matplotlib.pyplot.figure(figsize=(6,3))
+	matplotlib.pyplot.figure(figsize=(5,3))
 	learn.recorder.plot_loss()
 	matplotlib.pyplot.savefig('loss.png')
 	matplotlib.pyplot.clf()
 
 	interp = ClassificationInterpretation.from_learner(learn)
-	interp.plot_confusion_matrix(figsize=(5,5))
+	interp.plot_confusion_matrix(figsize=(4,4))
 	matplotlib.pyplot.savefig('confusion_matrix.png')
 	matplotlib.pyplot.clf()
