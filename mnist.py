@@ -58,7 +58,7 @@ if __name__ == "__main__":
 		item_tfms=Resize(224))
 
 	dls = DataLoaders.from_dblock(db, df=train, source=PATH, bs=32)
-	dls.show_batch(max_n=10, ncols=5, nrows=5, figsize=(4,4))
+	dls.show_batch(max_n=25, ncols=5, nrows=5, figsize=(4,4))
 
 	matplotlib.pyplot.savefig('show_batch.png')
 	matplotlib.pyplot.clf()
